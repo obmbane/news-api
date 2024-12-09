@@ -1,7 +1,7 @@
 import requests as rq
 import smtplib, ssl, os
 
-api_key = '99c9d45eaef445e08fe288cced78c6b5'
+api_key = os.getenv('API_KEY')
 topic = 'tesla'
 language = 'en'
 url = f'https://newsapi.org/v2/everything?q={topic}&from=2024-11-09&sortBy=publishedAt&apiKey={api_key}&language={language}'
