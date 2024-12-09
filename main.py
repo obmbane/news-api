@@ -12,14 +12,10 @@ content = request.json()
 def send_email(message):
     host = 'smtp.gmail.com'
     port = 465
-    '''
+    
     username = os.getenv('MY_EMAIL')
     password = os.getenv('EMAIL_PASSWORD')
     receiver = os.getenv('MY_EMAIL')
-    '''
-    username = 'obmbanetraining@gmail.com'
-    password = 'jrsg cigg dafz csci'
-    receiver = 'obmbanetraining@gmail.com'
 
     context = ssl.create_default_context()
 
