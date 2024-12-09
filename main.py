@@ -10,22 +10,32 @@ content = request.json()
 def send_email(message):
     host = 'smtp.gmail.com'
     port = 465
-
+    '''
     username = os.getenv('MY_EMAIL')
     password = os.getenv('EMAIL_PASSWORD')
     receiver = os.getenv('MY_EMAIL')
+    '''
+    username = 'obmbanetraining@gmail.com'
+    password = 'jrsg cigg dafz csci'
+    receiver = 'obmbanetraining@gmail.com'
 
     context = ssl.create_default_context()
 
     with smtplib.SMTP_SSL(host,port,context=context) as server:
         server.login(username,password)
         server.sendmail(username,receiver,message)
-
-
+message = 'Latest News: '
 for article in content['articles']:
 
-    print(article['title'])
-    print(article['description'])
+    if article['title'] is not None:
+        title = article['title']
+        description = article['description']
+        message += 2*'\n' + title + '\n' + description + '\n'
+
+message = message.encode('utf-8')
+print(message)
+#email_content = message
+send_email(message)
 
 
 
